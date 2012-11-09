@@ -3,7 +3,7 @@ Example:
     from pyPdf import PdfFileWriter, PdfFileReader
 
     output = PdfFileWriter()
-    input1 = PdfFileReader(file("document1.pdf", "rb"))
+    input1 = PdfFileReader(open("document1.pdf", "rb"))
 
     # add page 1 from input1 to output document, unchanged
     output.addPage(input1.getPage(0))
@@ -32,7 +32,7 @@ Example:
     print "document1.pdf has %s pages." % input1.getNumPages())
 
     # finally, write "output" to document-output.pdf
-    outputStream = file("document-output.pdf", "wb")
+    outputStream = open("document-output.pdf", "wb")
     output.write(outputStream)
 
 
